@@ -14,7 +14,7 @@ import androidx.annotation.RequiresApi;
 public class MyTileService extends TileService {
     private final String LOG_TAG = "MyTitleService";
     private final int STATE_ON = 1;
-    private  final int STATE_OFF = 2;
+    private  final int STATE_OFF = 0;
     private int togglestate = STATE_ON;
     MainActivity m1;
     MainActivity.MyThread t1;
@@ -46,14 +46,14 @@ public class MyTileService extends TileService {
         t1.run();
 
         Icon icon;
-        if(togglestate == STATE_OFF){
-            togglestate = STATE_ON;
-            icon = Icon.createWithResource(getApplicationContext(), R.drawable.clipboard);
+        if(togglestate == STATE_ON){
+            togglestate = STATE_OFF;
+            icon = Icon.createWithResource(getApplicationContext(), R.drawable.ic_baseline_wifi_off_24);
 
         }
         else{
-            togglestate = STATE_OFF;
-            icon = Icon.createWithResource(getApplicationContext(), R.drawable.ic_baseline_content_copy_24);
+            togglestate = STATE_ON;
+            icon = Icon.createWithResource(getApplicationContext(), R.drawable.ic_baseline_wifi_24);
         }
 
         getQsTile().setIcon(icon);

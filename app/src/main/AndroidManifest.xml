@@ -18,8 +18,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FTP"
-        tools:targetApi="31">
+        android:theme="@style/Theme.FTP">
         <activity
             android:name="com.mywork.WiFi_Clipbord.MainActivity"
             android:exported="true">
@@ -29,10 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".MyTileService"
+        <service
+            android:name=".MyTileService"
             android:exported="true"
+            android:icon="@drawable/ic_baseline_wifi_24"
             android:label="@string/app_name"
-            android:icon="@drawable/clipboard"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksetting.action.QS_TILE"/>
